@@ -23,7 +23,7 @@ export default class Grid extends React.Component {
         const min_width = this.props.grid_width * 45;
         return (
             <div>
-                <div className="game-info" style={{'min-width': min_width}}>
+                <div className="game-info" style={{minWidth: min_width}}>
                     <span className="status">{statuses[this.state.game_status]}</span>
                     <span>Mines: {this.props.mines}</span>
                     <span>Flagged: {this.state.flagged}</span>
@@ -150,20 +150,23 @@ export default class Grid extends React.Component {
 
     renderBoard(data) {
         const grid = [];
-        for (let row of data) {
+        for (let row = 0; row < data.length; row++) {
             const temp_row = [];
-            for (let cell of row) {
+            for (let col = 0; col < data[0].length; ++col) {
                 temp_row.push(
-                    <td>
-                        <Cell key={cell.row * row.length + cell.col}
-                              cell={cell}
-                              onClick={() => this.handleCellClick(cell.row, cell.col)}
-                              onRightClick={(ev) => this.handleContextMenu(ev, cell.row, cell.col)}/>
+                    <td key={col}>
+                        <Cell cell={data[row][col]}
+                              onClick={() => this.handleCellClick(row, col)}
+                              onRightClick={(ev) => this.handleContextMenu(ev, row, col)}/>
                     </td>
                 );
             }
-            grid.push(<tr>{temp_row}</tr>)
+            grid.push(<tr key={row}>{temp_row}</tr>)
         }
-        return <table className="grid">{grid}</table>;
+        return (
+            <table>
+                <tbody className="grid">{grid}</tbody>
+            </table>
+        );
     }
 }
