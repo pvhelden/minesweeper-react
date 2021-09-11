@@ -19,10 +19,9 @@ export default class Grid extends React.Component {
     };
 
     render() {
-        const min_width = this.props.grid_width * 45;
         return (
             <div className="game">
-                <div className="game-info" style={{minWidth: min_width}}>
+                <div className="game-info">
                     <span className="status">{statuses[this.state.game_status]}</span>
                     <span>Mines: {this.props.mines}</span>
                     <span>Flagged: {this.state.flagged}</span>
