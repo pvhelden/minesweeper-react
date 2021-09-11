@@ -5,11 +5,9 @@ export default class Game extends React.Component {
     render() {
         const {grid_height, grid_width, mines} = this.props;
         return (
-            <div className="game">
-                <Grid grid_height={grid_height}
-                      grid_width={grid_width}
-                      mines={mines}/>
-            </div>
+            <Grid grid_height={grid_height}
+                  grid_width={grid_width}
+                  mines={mines}/>
         );
     }
 }

@@ -36,7 +36,11 @@ body {
 }
 
 .game {
+  align-items: center;
   background: $color-grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 15vh auto;
   padding: 20px;
   width: fit-content;
