@@ -15,7 +15,6 @@ export default class Grid extends React.Component {
     state = {
         board_data: this.initBoardData(),
         game_status: 0,
-        to_reveal: this.props.grid_height * this.props.grid_width - this.props.mines,
         flagged: 0,
     };
 
@@ -63,6 +62,7 @@ export default class Grid extends React.Component {
                 };
             }
         }
+        data.to_reveal = this.props.grid_height * this.props.grid_width - this.props.mines;
         return data;
     }
 
@@ -85,8 +85,7 @@ export default class Grid extends React.Component {
             this.setState({flagged: this.state.flagged - 1})
         }
         cell.revealed = true;
-        this.setState({to_reveal: this.state.to_reveal - 1});
-        if (!this.state.to_reveal) {
+        if (!--data.to_reveal) {
             return data;
         }
         if (!cell.mine && !cell.value) {
@@ -100,22 +99,26 @@ export default class Grid extends React.Component {
     }
 
     handleCellClick(row, col) {
+        let status = this.state.game_status;
         let data = this.state.board_data;
         const cell = data[row][col];
         if (cell.revealed || cell.flagged) {
             return null;
         }
         if (cell.mine) {
-            this.setState({game_status: -1});
+            status = -1;
             data = this.revealAll(data);
         } else {
             data = this.revealEmpty(row, col, data);
-            if (!this.state.to_reveal) {
-                this.setState({gameStatus: 1});
+            if (!data.to_reveal) {
+                status = 1;
                 data = this.revealAll(data);
             }
         }
-        this.setState({board_data: data});
+        this.setState({
+            board_data: data,
+            game_status: status,
+        });
     }
 
     revealAll(data) {
