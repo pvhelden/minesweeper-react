@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import './index.scss';
+import './game.scss';
 import Game from './game';
 
 ReactDOM.render(
