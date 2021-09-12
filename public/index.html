@@ -5,6 +5,21 @@
     <title>Minesweeper</title>
 </head>
 <body>
+<div class="settings">
+    <div>
+        <label for="grid-height">Grid Height:</label>
+        <input id="grid-height" max="20" min="2" type="number" value="10"/>
+    </div>
+    <div>
+        <label for="grid-width">Grid Width:</label>
+        <input id="grid-width" max="20" min="2" type="number" value="10"/>
+    </div>
+    <div>
+        <label for="mines">Mines:</label>
+        <input id="mines" max="100" min="1" type="number" value="20"/>
+    </div>
+    <button id="start">Start</button>
+</div>
 <div id="root"></div>
 </body>
 </html>
