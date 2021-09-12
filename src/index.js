@@ -1,5 +1,7 @@
 import ReactDOM from 'react-dom';
 import './game.scss';
+import './index.scss';
+import './settings.scss';
 import Game from './game';
 
 const btn = document.getElementById('start');
@@ -22,7 +24,7 @@ function getValidatedInputs() {
     return [
         checkRange(document.getElementById('grid-height').value, 2, 20, "Grid Height"),
         checkRange(document.getElementById('grid-width').value, 2, 20, "Grid Width"),
-        checkRange(document.getElementById('mines').value, 1, 100, "Mines"),
+        checkRange(document.getElementById('mines').value, 1, 99, "Mines"),
     ];
 }
 

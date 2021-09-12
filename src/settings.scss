@@ -1,0 +1,42 @@
+@import 'variables';
+
+li label, li input {
+  display: inline-block;
+}
+
+li label {
+  color: $color-info;
+  min-width: 120px;
+}
+
+.settings {
+  align-items: center;
+  background: $color-background;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto 20px;
+  padding: 20px;
+  width: fit-content;
+}
+
+button {
+  background-color: $color-background;
+  border: 5px double $color-info-border;
+  color: $color-info;
+  height: 100%;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: $color-button-highlight;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

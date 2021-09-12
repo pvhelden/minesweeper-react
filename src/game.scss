@@ -1,13 +1,8 @@
 @import 'variables';
 
-body {
-  background: linear-gradient(0deg, #d9cfe0, #e7e1ee, #d9cfe0);
-  font-family: sans-serif;
-}
-
 .cell {
   background: $color-cell-revealed;
-  border: 1px solid $color-grid;
+  border: 1px solid $color-background;
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
@@ -28,11 +23,11 @@ body {
 
 .game {
   align-items: center;
-  background: $color-grid;
+  background: $color-background;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 15vh auto;
+  margin: 0 auto;
   padding: 20px;
   width: fit-content;
 }
@@ -45,7 +40,6 @@ body {
 
 .game-info {
   border: 5px double $color-info-border;
-  border-radius: 10px;
   box-sizing: border-box;
   color: $color-info;
   display: flex;
