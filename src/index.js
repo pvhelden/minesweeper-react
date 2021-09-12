@@ -8,6 +8,7 @@ btn.addEventListener('click', renderGame);
 function renderGame() {
     const inputs = getValidatedInputs();
     if (!inputs.some((elem) => {return elem === null;})) {
+        ReactDOM.unmountComponentAtNode(document.getElementById('root'));
         ReactDOM.render(
             <Game grid_height={inputs[0]}
                   grid_width={inputs[1]}
