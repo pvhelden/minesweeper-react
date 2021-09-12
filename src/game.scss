@@ -1,9 +1,4 @@
-$color-cell-revealed: #cccccc;
-$color-cell-hidden: #333333;
-$color-info: #cccccc;
-$color-info-border: #333333;
-$color-grid: #6b988e;
-$color-mine: #fc543c;
+@import 'variables';
 
 body {
   background: linear-gradient(0deg, #d9cfe0, #e7e1ee, #d9cfe0);
