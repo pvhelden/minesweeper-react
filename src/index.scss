@@ -1,3 +1,6 @@
+@import 'variables';
+
 body {
+  background-color: $color-background;
   font-family: "Courier New", monospace;
 }
